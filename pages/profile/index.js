@@ -20,7 +20,7 @@ function Profile() {
   const getUserPost = async () => {
     setUserPost([]);
     if (session?.user.email) {
-      const q = query(collection(db, 'posts'), where('email', '==', session?.user.email));
+      const q = query(collection(db, 'admin'), where('email', '==', session?.user.email));
       const querySnapshot = await getDocs(q);
       querySnapshot.forEach((doc) => {
         let data = doc.data();
@@ -31,7 +31,7 @@ function Profile() {
   };
 
   const onDeletePost = async (id) => {
-    await deleteDoc(doc(db, 'posts', id));
+    await deleteDoc(doc(db, 'admin', id));
     setShowToast(true);
     window.location.reload();
   };
@@ -47,7 +47,7 @@ function Profile() {
   };
 
   const onSaveEdit = async (id) => {
-    const postRef = doc(db, 'posts', id);
+    const postRef = doc(db, 'admin', id);
     await updateDoc(postRef, { title: editItemContent });
     setShowToast(true);
     setEditItemId(null);
