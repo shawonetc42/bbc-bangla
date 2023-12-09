@@ -1,37 +1,37 @@
 const GameList=[
     {
         id:1,
-        name:'Latest Project',
+        name:'নির্বাচিত খবর',
         image:'/stack.png'
     },
     {
         id:2,
-        name:'Full Strack Web ',
+        name:'সংসদ নির্বাচন ২০২৪',
         image:'./3.png'
     },
     {
         id:3,
-        name:'React',
+        name:'বাংলাদেশ',
         image:'./2.png'
     },
     {
         id:4,
-        name:'Next Js',
+        name:'ভারত',
         image:'./4.png'
     },
     {
         id:5,
-        name:'TypeScript',
+        name:'বিশ্ব',
         image:'./5.png'
     },
     {
         id:6,
-        name:'Tailwind project',
+        name:'স্বাস্থ্য',
         image:'./6.png'
     },
     {
         id:7,
-        name:'Other',
+        name:'অন্যান্য খবর',
         image:'./7.png'
     },
 
