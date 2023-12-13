@@ -1,4 +1,3 @@
-// components/Home/Posts.js
 import React, { useState } from 'react';
 import { FaThumbsUp, FaComment } from 'react-icons/fa';
 
@@ -17,8 +16,8 @@ const Posts = ({ posts, onLike, onComment }) => {
     const currentTime = getCurrentTime();
     const timestampedComment = `${newComment} - ${currentTime}`;
     onComment(postId, timestampedComment, commentType, parentId);
-    setNewComment(''); // Clear the comment input after submitting
-    setReplyToIndex(null); // Reset replyToIndex
+    setNewComment('');
+    setReplyToIndex(null);
   };
 
   const toggleComments = () => {
@@ -53,7 +52,7 @@ const Posts = ({ posts, onLike, onComment }) => {
               <FaThumbsUp className="mr-1" />
               Like {post.likes || 0}
             </button>
-            
+
             <button
               className="flex items-center cursor-pointer"
               onClick={() => toggleComments()}
@@ -76,13 +75,13 @@ const Posts = ({ posts, onLike, onComment }) => {
                 onClick={() => handleComment(post.id, 'comment')}
                 className="bg-blue-500 text-white px-4 py-2 rounded"
               >
-                Comment 
+                Comment
               </button>
             </div>
             {/* Comments */}
             <div className="mt-2 text-gray-600">
               {post.comments &&
-                post.comments.slice(0, commentsToShow).map((comment, commentIndex) => (
+                [...post.comments].reverse().slice(0, commentsToShow).map((comment, commentIndex) => (
                   <div
                     key={commentIndex}
                     className={`flex items-start bg-gray-100 p-2 rounded mt-2 ${
@@ -123,9 +122,7 @@ const Posts = ({ posts, onLike, onComment }) => {
                   {showComments ? 'Show More Comments' : 'Hide Comments'}
                 </div>
               )}
-              <div className="mt-2">
-                
-              </div>
+              <div className="mt-2"></div>
             </div>
           </div>
         </div>
