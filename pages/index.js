@@ -13,7 +13,7 @@ import {
 } from 'firebase/firestore';
 import GameList from '../components/Home/GameList';
 import Posts from '../components/Home/Posts';
-import styles from '../../myportfoliohowto/styles/Home.module.css'
+import styles from '../../myportfoliohowto/styles/Home.module.css'; 
 
 
 export default function Home() {
