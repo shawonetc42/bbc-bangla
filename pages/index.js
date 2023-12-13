@@ -1,4 +1,3 @@
-// pages/index.js
 import { useEffect, useState } from 'react';
 import app from '../shared/FirebaseConfig';
 import {
@@ -13,8 +12,6 @@ import {
 } from 'firebase/firestore';
 import GameList from '../components/Home/GameList';
 import Posts from '../components/Home/Posts';
-
-
 
 export default function Home() {
   const db = getFirestore(app);
@@ -99,13 +96,15 @@ export default function Home() {
   };
 
   return (
-    <div className="">
+    <div className='flex items-center justify-center '>
+    <div className="w-[542px]  ">
       <GameList onGamePress={onGamePress} />
       {loading ? (
         <p>Loading...</p>
       ) : (
         <Posts posts={posts} onLike={handleLike} onComment={handleComment} />
       )}
+    </div>
     </div>
   );
 }
