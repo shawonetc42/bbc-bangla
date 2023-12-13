@@ -1,11 +1,14 @@
+// components/Home/Posts.js
 import React, { useState } from 'react';
 import { FaThumbsUp, FaComment } from 'react-icons/fa';
+import { useSession } from 'next-auth/react';
 
 const Posts = ({ posts, onLike, onComment }) => {
   const [newComment, setNewComment] = useState('');
   const [showComments, setShowComments] = useState(true);
   const [replyToIndex, setReplyToIndex] = useState(null);
   const [commentsToShow, setCommentsToShow] = useState(3);
+  const { data: session } = useSession(); // Get user session information
 
   const getCurrentTime = () => {
     const now = new Date();
@@ -20,6 +23,11 @@ const Posts = ({ posts, onLike, onComment }) => {
     setReplyToIndex(null);
   };
 
+  const handleImpression = (postId) => {
+    // Call a function or API to track impressions
+    console.log(`Post with ID ${postId} viewed.`);
+  };
+
   const toggleComments = () => {
     setShowComments(!showComments);
   };
@@ -29,7 +37,7 @@ const Posts = ({ posts, onLike, onComment }) => {
   };
 
   const loadMoreComments = () => {
-    setCommentsToShow((prev) => prev + 3); // Increase the number of comments to show by 3
+    setCommentsToShow((prev) => prev + 3);
   };
 
   // Sort posts based on the number of likes in descending order
@@ -47,7 +55,10 @@ const Posts = ({ posts, onLike, onComment }) => {
           <div className="flex items-center text-gray-500 space-x-4">
             <button
               className="flex items-center cursor-pointer"
-              onClick={() => onLike(post.id)}
+              onClick={() => {
+                onLike(post.id);
+                handleImpression(post.id);
+              }}
             >
               <FaThumbsUp className="mr-1" />
               Like {post.likes || 0}
@@ -55,7 +66,10 @@ const Posts = ({ posts, onLike, onComment }) => {
 
             <button
               className="flex items-center cursor-pointer"
-              onClick={() => toggleComments()}
+              onClick={() => {
+                toggleComments();
+                handleImpression(post.id);
+              }}
             >
               <FaComment className="mr-1" />
               Comment {post.comments ? post.comments.length : 0}
@@ -88,7 +102,13 @@ const Posts = ({ posts, onLike, onComment }) => {
                       replyToIndex === commentIndex ? 'ml-8' : ''
                     }`}
                   >
-                    <div className="flex-shrink-0 w-8 h-8 bg-gray-200 rounded-full mr-2"></div>
+                    {session && session.user && (
+                      <img
+                        src={session.user.image}
+                        alt={session.user.name}
+                        className="w-8 h-8 rounded-full mr-2"
+                      />
+                    )}
                     <div>
                       <p className="text-gray-700">{comment}</p>
                       <button
