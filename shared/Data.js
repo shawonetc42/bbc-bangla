@@ -2,7 +2,7 @@ const GameList=[
     {
         id:1,
         name:'নির্বাচিত খবর',
-        image:'/stack.png'
+        image:'https://t3.ftcdn.net/jpg/00/88/43/58/360_F_88435810_nmASvVhJuhWdPU5TgAWJodCMCLakxjga.jpg'
     },
     {
         id:2,
