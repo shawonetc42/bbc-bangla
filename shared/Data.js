@@ -2,37 +2,37 @@ const GameList=[
     {
         id:1,
         name:'নির্বাচিত খবর',
-        image:'/stack.png'
+        image:''
     },
     {
         id:2,
         name:'সংসদ নির্বাচন ২০২৪',
-        image:'./3.png'
+        image:''
     },
     {
         id:3,
         name:'বাংলাদেশ',
-        image:'./2.png'
+        image:''
     },
     {
         id:4,
         name:'ভারত',
-        image:'./4.png'
+        image:''
     },
     {
         id:5,
         name:'বিশ্ব',
-        image:'./5.png'
+        image:''
     },
     {
         id:6,
         name:'স্বাস্থ্য',
-        image:'./6.png'
+        image:''
     },
     {
         id:7,
         name:'অন্যান্য খবর',
-        image:'./7.png'
+        image:''
     },
 
 
