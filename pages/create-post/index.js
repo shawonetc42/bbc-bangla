@@ -15,12 +15,12 @@ function CreatePost() {
         font-extrabold text-blue-500'><div className="bg-red-700 self-stretch flex w-full flex-col justify-center px-16 py-4 items-start max-md:max-w-full max-md:px-5">
       <img
         loading="lazy"
-        src="https://cdn.builder.io/api/v1/image/assets/TEMP/fab4621bafdc12878b2aabce3f7564525b91ead831cec87827ede4416ec98a36?apiKey=4347c25cbbc84e04bdff1e95b941b3c7&"
+        src="logo.png"
         className="aspect-[9.2] object-contain object-center w-[276px] justify-center items-center overflow-hidden max-w-full max-md:ml-2.5 max-sm:-ml-1"
       />
     </div></h2>
         
-        <p>Create Post and News Magazine site </p>
+        <p className='font-bold'>তথ্য শেয়ার করুন </p>
         <Form/>
     </div>
     </div>
