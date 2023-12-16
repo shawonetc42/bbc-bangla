@@ -85,13 +85,7 @@ function Form() {
           placeholder="Write Description here"
         />
 
-        <input
-          type="date"
-          name="date"
-          required
-          onChange={handleChange}
-          className="w-full mb-4 border-[1px] p-2 rounded-md"
-        />
+        
         <input
           type="text"
           placeholder="Location"
@@ -100,22 +94,8 @@ function Form() {
           onChange={handleChange}
           className="w-full mb-4 border-[1px] p-2 rounded-md"
         />
-         <input
-          type="text"
-          placeholder="link"
-          name="link"
-          required
-          onChange={handleChange}
-          className="w-full mb-4 border-[1px] p-2 rounded-md"
-        />
-        <input
-          type="text"
-          placeholder="Zip"
-          name="zip"
-          required
-          onChange={handleChange}
-          className="w-full mb-4 border-[1px] p-2 rounded-md"
-        />
+         
+      
         <select
           name="game"
           onChange={handleChange}
