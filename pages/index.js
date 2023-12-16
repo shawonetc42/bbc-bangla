@@ -98,7 +98,7 @@ export default function Home() {
   return (
     <div className='flex items-center justify-center '>
     <div className="w-[542px]  ">
-      <GameList onGamePress={onGamePress} />
+      {/* <GameList onGamePress={onGamePress} /> */}
       {loading ? (
         <p>Loading...</p>
       ) : (
